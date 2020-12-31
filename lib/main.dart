@@ -13,7 +13,8 @@ void main() => runApp(
       // Injects the Authentication BLoC
       child: BlocProvider<AuthenticationBloc>(
         create: (context) {
-          final authService = RepositoryProvider.of<AuthenticationService>(context);
+          final authService =
+              RepositoryProvider.of<AuthenticationService>(context);
           return AuthenticationBloc(authService)..add(AppLoaded());
         },
         child: MyApp(),
